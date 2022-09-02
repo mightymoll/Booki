@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!--code by Molly Felts Vallin-->
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- optimization for mobile devices below -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- link to CSS stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="normalize" href="normalize.css" />
+    <!-- FontAwesome icons-->
+    <script
+      src="https://kit.fontawesome.com/cd93d31cbd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- site title-->
+    <title>Booki</title>
+  </head>
+
+  <body>
+    <div class="container" id="master">
+      <!--header-->
+      <header>
+        <img src="logo.jpg" />
+        <div class="menu">
+          <a href="#" class="menu_item">Hébergements</a>
+          <a href="#" class="menu_item">Activités</a>
+        </div>
+      </header>
+      <!--subheader-->
+      <section class="subheader">
+        <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+        <p>En plein centre ville ou en pleine nature</p>
+        <!--searchbar-->
+        <form id="searchbar" method="post" action="search.php">
+          <p>
+            <label>searchbar</label>
+            <i class="fa-solid fa-location-dot"></i>
+            <input
+              type="search"
+              name="searchbar"
+              id="search"
+              placeholder="Marseille, France"
+            />
+            <input type="submit" value="Rechercher" id="button_search" />
+          </p>
+        </form>
+        <!--filters-->
+        <fieldset>
+          <legend>Filters</legend>
+          <!--filter 1-->
+          <i class="fa-solid fa-money-bill-wave"></i>
+          <label for="filters">Economique</label>
+          <input type="checkbox" name="Economique" id="filters" />
+          <!--filter 2-->
+          <i class="fa-solid fa-child-reaching"></i>
+          <label for="filters">Familial</label>
+          <input type="checkbox" name="Familial" id="filters" />
+          <!--filter 3-->
+          <i class="fa-solid fa-heart"></i>
+          <label for="filters">Romantique</label>
+          <input type="checkbox" name="Romantique" id="filters" />
+          <!--filter 4-->
+          <i class="fa-solid fa-dog"></i>
+          <label for="filters">Animaux authorises</label>
+          <input type="checkbox" name="Animaux" id="filters" />
+        </fieldset>
+        <!-- tagline alert, message -->
+        <span class="disponibilite">
+          <i class="fa-light fa-circle-info"></i>
+          <p>Plus de 500 logements sont disponibles dans cette ville</p>
+        </span>
+      </section>
+
+      <div class="container" id="main">
+        <!--Hebergements au ville-->
+        <section id="hebergements_a_ville">
+          <h1>Hébergements à Marseille</h1>
+          <div class="container" id="a_ville">
+            <!--card type: vertical with border, à ville: card #1-->
+            <div class="card_v" id="card_v_border">
+              <img
+                src="auberge_cannebiere.jpg"
+                alt="Auberge La Cannebière chambre"
+              />
+              <div class="card_info" id="bottom">
+                <h3>Auberge La Cannebière</h3>
+                <p>Nuit à partir de <strong>25&euro;</strong></p>
+                <!-- star ratings -->
+                <span class="rating" id="4">
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star" id="false"></i>
+                </span>
+              </div>
+            </div>
+            <!-- à ville: card #2-->
+            <div class="card_v" id="card_v_border">
+              <img src="hotel_du_port.jpg" alt="Hôtel du port chambre" />
+              <div class="card_info" id="bottom">
+                <h3>Hôtel du port</h3>
+                <p>Nuit à partir de 52<strong>&euro;</strong></p>
+                <!-- star ratings -->
+                <span class="rating" id="5">
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- à ville: card #3-->
+            <div class="card_v" id="card_v_border">
+              <img src="hotel_mouettes.jpg" alt="Hôtel Les mouettes chambre" />
+              <div class="card_info" id="bottom">
+                <h3>Hôtel Les mouettes</h3>
+                <p>Nuit à partir de 76<strong>&euro;</strong></p>
+                <!-- star ratings -->
+                <span class="rating" id="4">
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star" id="false"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- à ville: card #4-->
+            <div class="card_v" id="card_v_border">
+              <img src="hotel_mer.jpg" alt="Hôtel de La mer chambre" />
+              <div class="card_info" id="bottom">
+                <h3>Hôtel de La mer</h3>
+                <p>Nuit à partir de 46<strong>&euro;</strong></p>
+                <!-- star ratings -->
+                <span class="rating" id="3">
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star" id="false"></i>
+                  <i class="fa-solid far fa-star" id="false"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- à ville: card #5-->
+            <div class="card_v" id="card_v_border">
+              <img src="auberge_panier.jpg" alt="Auberge Le Panier chambre" />
+              <div class="card_info" id="bottom">
+                <h3>Auberge Le Panier</h3>
+                <p>Nuit à partir de <strong>23&euro;</strong></p>
+                <!-- star ratings -->
+                <span class="rating" id="4">
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star" id="false"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- à ville: card #6-->
+            <div class="card_v" id="card_v_border">
+              <img src="hotel_amina.jpg" alt="Hôtel chez Amina chambre" />
+              <div class="card_info" id="bottom">
+                <h3>Hôtel chez Amina</h3>
+                <p>Nuit à partir de 96<strong>&euro;</strong></p>
+                <!-- star ratings -->
+                <span class="rating" id="4">
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star" id="false"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <h2>Afficher plus</h2>
+        </section>
+
+        <!--Les plus populaires-->
+        <section class="hebergements_populaires">
+          <span
+            ><h1>Les plus populaires</h1>
+            <i class="fa-solid far fa-star" id="grand"></i
+          ></span>
+          <div class="container" id="populaires">
+          <!--card type: horizontal with border, populaires: card #1-->
+            <div class="card_h" id="card_h_border">
+              <img
+                src="hotel_soleil.jpg"
+                alt="Hôtel Le soleil du matin chambre"
+              />
+              <div class="card_info" id="right">
+                <h3>Hôtel Le soleil du matin</h3>
+                <p>Nuit à partir de 128<strong>&euro;</strong></p>
+                <!-- star ratings -->
+                <span class="rating" id="5">
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                </span>
+              </div>
+            </div>
+
+          <!--populaires: card #2-->
+            <div class="card_h" id="card_h_border">
+              <img
+                src="au_coeur.jpg"
+                alt="Au cœur de l'eau Chambres d'hôtes chambre"
+              />
+              <div class="card_info" id="right">
+                <h3>Au cœur de l'eau Chambres d'hôtes</h3>
+                <p>Nuit à partir de 71<strong>&euro;</strong></p>
+                <!-- star ratings -->
+                <span class="rating" id="4">
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star" id="false"></i>
+                </span>
+              </div>
+            </div>
+
+          <!--populaires: card #3-->
+            <div class="card_h" id="card_h_border">
+              <img src="tout_bleu.jpg" alt="Hôtel Tout bleu et Blanc chambre" />
+              <div class="card_info" id="right">
+                <h3>Hôtel Tout bleu et Blanc</h3>
+                <p>Nuit à partir de 68<strong>&euro;</strong></p>
+                <!-- star ratings -->
+                <span class="rating" id="4">
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star"></i>
+                  <i class="fa-solid far fa-star" id="false"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+  <!-- Activities section-->
+      <div class="container" id="bottom">
+        <section class="activities">
+          <h1>Activités à Marseille</h1>
+        <!-- left section -->
+          <div class="container" id="bottom_left">
+        <!-- activities : card #1_left-->
+            <div class="card_v" id="card_v_grand">
+              <img src="vieux_port.jpg" alt="Vieux Port" />
+              <div class="card_info" id="bottom">
+                <h3>Vieux Port</h3>
+              </div>
+          <!-- activities : card #2_left-->
+            <div class="card_v" id="card_v">
+              <img src="fort_pomegues.jpg" alt="Fort de Pomègues" />
+              <div class="card_info" id="bottom">
+                <h3>Fort de Pomègues</h3>
+              </div>
+          <!-- activities : card #3_left-->
+          <div class="card_v" id="card_v">
+            <img src="iles_frioul.jpg" alt="Îles du Frioul" />
+            <div class="card_info" id="bottom">
+              <h3>Îles du Frioul</h3>
+            </div>
+          </div>
+    <!-- left section -->
+          <div class="container" id="bottom_left">
+        <!-- activities : card #1_left-->
+            <div class="card_v" id="card_v_grand">
+              <img src="vieux_port.jpg" alt="Vieux Port" />
+              <div class="card_info" id="bottom">
+                <h3>Vieux Port</h3>
+              </div>
+          <!-- activities : card #2_left-->
+            <div class="card_v" id="card_v">
+              <img src="fort_pomegues.jpg" alt="Fort de Pomègues" />
+              <div class="card_info" id="bottom">
+                <h3>Fort de Pomègues</h3>
+              </div>
+          <!-- activities : card #3_left-->
+          <div class="card_v" id="card_v">
+            <img src="iles_frioul.jpg" alt="Îles du Frioul" />
+            <div class="card_info" id="bottom">
+              <h3>Îles du Frioul</h3>
+            </div>
+          </div>
+
+    <!-- right section -->
+          <div class="container" id="bottom_right">
+        <!-- activities : card #1_right-->
+            <div class="card_v" id="card_v_grand">
+              <img src="calanques.jpg" alt="Parc National des Calanques" />
+              <div class="card_info" id="bottom">
+                <h3>Parc National des Calanques</h3>
+              </div>
+          <!-- activities : card #2_right-->
+            <div class="card_v" id="card_v">
+              <img src="notre_dame_garde.jpg" alt="Notre-Dame-de-la-Garde" />
+              <div class="card_info" id="bottom">
+                <h3>Notre-Dame-de-la-Garde</h3>
+              </div>
+          <!-- activities : card #3_right-->
+          <div class="card_v" id="card_v">
+            <img src="parc_longchamp.jpg" alt="Parc Longchamp" />
+            <div class="card_info" id="bottom">
+              <h3>Parc Longchamp</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+<!-- END OF MAIN -->
+
+<!-- separate from main to allow for full-span color @site bottom-->
+  <footer>
+    <ul style="footer">
+      <h2>À propos</h2>
+    <li><a href="#">Fonctionnement du site</a></li>
+    <li><a href="#">Conditions générales de vente</a></li>
+    <li><a href="#">Données et confidentialité</a></li>
+    </ul>
+
+    <ul style="footer">
+      <h2>Nos hébergements</h2>
+    <li><a href="#">Charte qualité</a></li>
+    <li><a href="#">Soumettre votre hôtel</a></li>
+    </ul>
+
+    <ul style="footer">
+      <h2>Assistance</h2>
+    <li><a href="#">Centre d'aide</a></li>
+    <li><a href="#">Nous contacter</a></li>
+    </ul>
+  </footer>
+  </body>
+</html>
+
+<!--code by Molly Felts Vallin-->
