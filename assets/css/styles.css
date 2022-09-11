@@ -1,0 +1,685 @@
+/*** REFERENCE:
+-colors: bleu=#0065fc bleu clair=#deebff gris clair=#f2f2f2 gris=#d5d5d5
+-font/police: Raleway from GoogleFonts
+-icons from FontAwesome
+-breakpoint desktop: > 992px
+-breakpoint tablet: 768 - 992px
+-breakpoint mobile: < 768px
+-code by Molly Felts Vallin
+***/
+
+/* font import/source link */
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap);
+
+:root {
+  --blue: #0065fc;
+  --light-blue: #deebff;
+  --grey: #f2f2f2;
+  --medium-grey: #d9d9d9;
+}
+
+* {
+  box-sizing: border-box;
+  color: #000;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: max-content;
+}
+
+/* general icon styling for proper display */
+.icon::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* text styles - generic */
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+button {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+strong {
+  font-size: inherit;
+  font-weight: 600;
+}
+
+/* text-sizing - specific */
+h1 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0;
+}
+
+h3 {
+  font-size: 0.9em;
+  font-weight: 600;
+  margin: 0;
+}
+
+h4 {
+  font-size: 0.8em;
+  margin: 0;
+}
+
+p {
+  font-size: 0.9em;
+}
+
+/*** START OF PAGE ***/
+
+/*---NAVBAR---*/
+nav {
+  width:100vw;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+  margin: 0 auto;
+}
+
+#logo {
+  height: 35px;
+  margin: auto 1%;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+.menu li {
+  width: 150px;
+  padding-top: 40px;
+  text-align: center;
+}
+/* <a> text hover style determined in general styles */
+.menu li:hover {
+  border-top: 3px solid var(--blue);
+}
+
+/*---START main content---*/
+.content {
+  width: 92vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/*---HEADER---*/
+.tagline h1 {
+  margin-bottom: 0.5em;
+}
+/* search bar */
+.searchbar {
+  width: 360px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  margin: 2% 0;
+}
+
+/* map marker icon within search bar */
+.wrapper-icon {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.location-dot::before {
+  content: "\f3c5";
+  font-size: 1.2em;
+  color: #000;
+}
+
+input[type="search"] {
+  flex: 1;
+  height: 48px;
+  border: 2px solid var(--grey);
+  border-right: none;
+  border-left: none;
+  font-size: 1em;
+  font-weight: 600;
+  color: #000;
+  padding-left: 0.8em;
+}
+
+/* ligtened placeholder text to better indicate it's a field */
+#query::placeholder {
+  color: var(--medium-grey);
+  font-size: 1em;
+  font-weight: 600;
+}
+
+/* submit button for search box on web - 'rechercher' */
+.btn-text {
+  height: 48px;
+  padding: 0 1em;
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.btn-icon {
+  display: none;
+}
+
+/* "Filtres" section */
+.filters {
+  display: flex;
+  align-items: baseline;
+}
+.filters h2 {
+  margin-right: 2%;
+  padding: 0;
+}
+
+.filters .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* wrapper qui permit les icons d'etre sur les boutons*/
+/* wrapper that allows icons to flex over the buttons*/
+.filters .wrapper {
+  display: flex;
+  margin-right: 3%;
+  margin-bottom: 2%;
+}
+
+.icon-rond {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-blue);
+  border-radius: 26px;
+  margin-right: -40px;
+  z-index: 1;
+}
+
+.icon-rond .icon::before {
+  font-size: 1.1em;
+  color: var(--blue);
+}
+
+.money::before {
+  content: "\f53a";
+}
+
+.child::before {
+  content: "\e59d";
+}
+.heart::before {
+  content: "\f004";
+}
+.dog::before {
+  content: "\f6d3";
+}
+
+.btn-filter {
+  height: 50px;
+  width: max-content;
+  background-color: #fff;
+  color: black;
+  font: 0.9em;
+  font-weight: 600;
+  border: 2px solid var(--medium-grey);
+  border-radius: 27.5px;
+  padding-right: 1em;
+  padding-left: 3em;
+  z-index: 0;
+}
+
+.btn-filter:hover {
+  background-color: var(--light-blue);
+  color: var(--blue);
+  border-color: var(--light-blue);
+}
+
+/* diponibilite info tagline */
+.alert {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1% 0 2% 0;
+}
+
+.alert p {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.message {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  border: 1.5px solid var(--medium-grey);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.info::before {
+  content: "\f129";
+  color: var(--blue);
+  font-size: 0.8em;
+  line-height: 0;
+  z-index: 0;
+}
+/*---END OF HEADER---*/
+
+/*---CARDS - GENERAL---*/
+[class^="card"] {
+  background-color: #fff;
+  box-shadow: 0 5px 8px var(--medium-grey);
+  border-radius: 15px;
+  border: 4px solid #fff;
+}
+
+[class^="caption"] h3:hover {
+  color: var(--blue);
+}
+
+.star::before {
+  content: "\f005";
+  font-size: 0.7em;
+  vertical-align: center;
+  color: var(--medium-grey);
+  letter-spacing: -0.3em;
+  line-height: 0;
+}
+
+.star-true::before {
+  content: "\f005";
+  font-size: 0.7em;
+  color: var(--blue);
+  letter-spacing: -0.3em;
+  line-height: 0;
+}
+
+/*---MAIN---*/
+.chambres {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+/*-- HEBERGEMENTS À VILLE --*/
+#hebergements {
+  flex: 1 1 72%;
+  background-color: var(--grey);
+  border-radius: 20px;
+  padding: 30px 5px 30px 30px;
+}
+
+#hebergements h1 {
+  margin-bottom: 25px;
+}
+#hebergements h2 {
+  margin-top: 10px;
+}
+
+.gallery-heb {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-heb {
+  flex: 1 1 30%;
+  min-width: 190px;
+  display: flex;
+  flex-direction: column;
+  margin-inline-end: 25px;
+  margin-block-end: 25px;
+}
+
+.card-heb img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+}
+
+.caption-heb {
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 7px 10px 5px 10px;
+}
+
+/*-- LES PLUS POPULAIRES--*/
+#populaires {
+  flex: 1 1 28%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: var(--grey);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.icon-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.star-grand::before {
+  content: "\f005";
+  font-size: 20px;
+  color: #000;
+}
+
+.gallery-pop {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-pop {
+  height: 140px;
+  min-width: 270px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-pop img {
+  width: 120px;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+
+.caption-pop {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 15px 6px 15px;
+}
+
+/*---ACTIVITES---*/
+#activities h1 {
+  margin-bottom: 20px;
+}
+/* activites flexbox grid */
+.gallery-act {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+/* controls card width/ # of columns*/
+.gallery-act a {
+  min-width: 20%;
+  max-width: 24%;
+  height: 100%;
+}
+
+.card-act {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.card-act img {
+  width: 100%;
+  height: calc(100% - 50px);
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.caption-act {
+  height: 50px;
+  display: block;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+/* activites special card heights */
+
+.height-60 {
+  max-height: 55%;
+}
+
+.height-40 {
+  max-height: 35%;
+}
+
+.height-50 {
+  max-height: 45%;
+}
+
+/*---FOOTER---*/
+footer {
+  width: 100vw;
+  height: 200px;
+  background-color: var(--grey);
+  padding: 4%;
+}
+
+.links {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links ul {
+  padding: 0;
+  line-height: 2em;
+}
+
+/* Medium devices, ie: tablets; 768px and up to desktop size */
+@media only screen and (max-width: 62em) {
+  /*** START OF PAGE - MED DEVICES---*/
+
+
+/* Small devices ie: phones; 768px and down */
+@media only screen and (max-width: 48em) {
+  /*** START OF PAGE - SM DEVICES---*/
+  nav {
+    flex-direction: column;
+    align-items: center;
+    margin: 6% 0;
+    padding: 0;
+  }
+  #logo {
+    margin:0;
+  }
+  .menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 8%;
+  }
+  
+  .menu li {
+    width: 50%;
+    padding: 6% 0 10px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--grey);
+  }
+  /* <a> text hover style determined in general styles */
+  .menu li:hover {
+    border-top: 0;
+    border-bottom: 2px solid var(--blue);
+  }
+
+  .content {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  header{
+    margin: 0 4%;
+  }
+  .searchbar {
+    width: 100%;
+    margin: 8% 0;
+  }
+
+  .btn-text {
+    display: none;
+  }
+
+  .btn-icon {
+    margin-left: -5%;
+    flex: none;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 15px;
+  }
+
+  .magnifying-glass::before {
+    content: "\f002";
+    font-size: 1em;
+    color: #fff;
+  }
+.filters{
+  flex-direction: column;
+}
+.filters h2{
+  margin-bottom: 10px;
+}
+.alert{
+  align-items: flex-start;
+  margin: 8% 0;
+}
+.alert p{
+  margin: 5px 0 0 8px;
+}
+.chambres{
+  flex-wrap: wrap-reverse;
+}
+#populaires{
+  width: 100%;
+  border-radius: 0;
+  padding: 6%;
+}
+.gallery-pop {
+  gap: 10px;
+}
+#hebergements{
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0;
+  padding: 0 6% 0 6%;
+}
+
+.gallery-heb{
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.card-heb{
+  min-width: 100%;
+  margin-inline-end: 0;
+  margin-block-end: 10px;
+}
+#activities{
+  padding: 0 6%;
+  margin-bottom: 50px;
+}
+.gallery-act {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 30px;
+}
+.gallery-act a {
+  max-width: 100%;
+  height: 200px;
+}
+
+.card-act {
+  height: 100%;
+  display: flex;;
+  flex-direction: column;
+  border: none;
+  position: relative;
+}
+
+footer {
+  height: max-content;
+  padding: 10% 6% 2% 6%;
+}
+
+.links {
+  width: 100%;
+  display: block;
+}
+.links .container{
+  padding: 0 0 6% 0;
+}
