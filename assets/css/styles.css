@@ -691,7 +691,7 @@ footer {
   .menu li:hover {
     border-top: 0;
     border-bottom: 2px solid var(--blue);
-    color: (var--blue);
+    color: var(--blue);
   }
 
   .content {
@@ -770,7 +770,7 @@ footer {
   }
 
   .gallery-pop {
-    flex: 1 0 1;
+    flex: 1 0 100%;
     flex-direction: column;
     flex-wrap: nowrap;
   }
