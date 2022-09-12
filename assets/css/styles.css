@@ -3,7 +3,7 @@
 -font/police: Raleway from GoogleFonts
 -icons from FontAwesome
 -breakpoint desktop: > 992px
--breakpoint tablet: 768 - 992px
+-tablet: 768 - 992px
 -breakpoint mobile: < 768px
 -code by Molly Felts Vallin
 ***/
@@ -69,28 +69,32 @@ strong {
   font-weight: 600;
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
 /* text-sizing - specific */
 h1 {
   font-size: 1.2em;
   font-weight: 600;
-  margin: 0;
 }
 
 h2 {
   font-size: 1em;
   font-weight: 600;
-  margin: 0;
 }
 
 h3 {
   font-size: 0.9em;
   font-weight: 600;
-  margin: 0;
 }
 
 h4 {
   font-size: 0.8em;
-  margin: 0;
 }
 
 p {
@@ -101,12 +105,13 @@ p {
 
 /*---NAVBAR---*/
 nav {
-  width:100vw;
+  width: 100vw;
   height: 120px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 0 4%;
-  margin: 0 auto;
+  margin: 0;
 }
 
 #logo {
@@ -117,6 +122,7 @@ nav {
 .menu {
   display: flex;
   justify-content: flex-end;
+  margin: 0;
   padding: 0;
 }
 
@@ -140,8 +146,9 @@ nav {
 
 /*---HEADER---*/
 .tagline h1 {
-  margin-bottom: 0.5em;
+  margin-bottom: 5px;
 }
+
 /* search bar */
 .searchbar {
   width: 360px;
@@ -150,7 +157,7 @@ nav {
   justify-content: flex-start;
   align-items: center;
   height: 50px;
-  margin: 2% 0;
+  margin: 30px 0;
 }
 
 /* map marker icon within search bar */
@@ -217,6 +224,7 @@ input[type="search"] {
 }
 
 .filters .container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -266,7 +274,7 @@ input[type="search"] {
   width: max-content;
   background-color: #fff;
   color: black;
-  font: 0.9em;
+  font-size: 0.9em;
   font-weight: 600;
   border: 2px solid var(--medium-grey);
   border-radius: 27.5px;
@@ -345,40 +353,40 @@ input[type="search"] {
 
 /*---MAIN---*/
 .chambres {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  gap: 40px;
+  gap: 3%;
   margin-bottom: 50px;
 }
 /*-- HEBERGEMENTS À VILLE --*/
 #hebergements {
-  flex: 1 1 72%;
+  flex: 1 1 60%;
+  max-width: 68%;
   background-color: var(--grey);
   border-radius: 20px;
-  padding: 30px 5px 30px 30px;
+  padding: 30px;
 }
 
 #hebergements h1 {
   margin-bottom: 25px;
 }
-#hebergements h2 {
-  margin-top: 10px;
-}
 
 .gallery-heb {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card-heb {
-  flex: 1 1 30%;
-  min-width: 190px;
+  flex: 1 0 28%;
+  max-width: 31%;
+  min-width: 40px;
   display: flex;
   flex-direction: column;
-  margin-inline-end: 25px;
-  margin-block-end: 25px;
+  margin-block-end: 20px;
 }
 
 .card-heb img {
@@ -399,7 +407,9 @@ input[type="search"] {
 
 /*-- LES PLUS POPULAIRES--*/
 #populaires {
-  flex: 1 1 28%;
+  flex: 1 1 29%;
+  max-width: 30%;
+  min-width: min-content;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -428,13 +438,14 @@ input[type="search"] {
 
 .card-pop {
   height: 140px;
-  min-width: 270px;
+  min-width: 240px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .card-pop img {
+  flex-shrink: 0;
   width: 120px;
   height: 100%;
   object-fit: cover;
@@ -457,14 +468,14 @@ input[type="search"] {
 }
 /* activites flexbox grid */
 .gallery-act {
-  width: 100%;
+  min-width: 100%;
   height: 400px;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  align-items: center;
-  gap: 30px;
   margin-bottom: 50px;
+  gap: 2%;
+  padding: 0;
 }
 /* controls card width/ # of columns*/
 .gallery-act a {
@@ -475,6 +486,7 @@ input[type="search"] {
 
 .card-act {
   height: 100%;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   border: none;
@@ -530,14 +542,127 @@ footer {
   padding: 0;
   line-height: 2em;
 }
-
 /* Medium devices, ie: tablets; 768px and up to desktop size */
-@media only screen and (max-width: 62em) {
+@media only screen and (max-width: 992px) {
   /*** START OF PAGE - MED DEVICES---*/
+  .content {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
 
+  .tagline {
+    padding: 0 4%;
+  }
+
+  .searchbar {
+    width: 70%;
+    margin: 4% auto;
+  }
+
+  .filters {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .filters h2 {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  .filters .container {
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 15px 4%;
+    border-top: 2px solid var(--medium-grey);
+    border-bottom: 2px solid var(--medium-grey);
+    margin-bottom: 15px;
+    margin-bottom: 0;
+  }
+
+  .filters .wrapper {
+    margin: 0;
+  }
+
+  .btn-filter {
+    font-size: 0.9em;
+    padding-left: 3.5em;
+  }
+
+  .alert {
+    margin: 2% 4%;
+  }
+
+  .chambres {
+    flex-wrap: wrap-reverse;
+  }
+
+  #populaires {
+    width: 100vw;
+    border-radius: 0;
+    padding: 4% 4% 40px 4%;
+    margin-bottom: 4%;
+  }
+
+  .gallery-pop {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .card-pop a {
+    width: 0;
+  }
+  .card-pop {
+    height: 120px;
+    flex: 1 0 33%;
+    max-width: 33%;
+    min-width: 230px;
+  }
+  .card-pop img {
+    flex: none;
+    width: 85px;
+  }
+  #hebergements {
+    width: 100vw;
+    background-color: #fff;
+    border-radius: 0;
+    padding: 0 4%;
+  }
+
+  .gallery-heb {
+    width: 92vw;
+  }
+
+  #activities {
+    padding: 0 4%;
+  }
+
+  .gallery-act {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+
+  .gallery-act a {
+    width: 33%;
+    min-width: 32%;
+    height: 200px;
+  }
+}
 
 /* Small devices ie: phones; 768px and down */
-@media only screen and (max-width: 48em) {
+@media only screen and (max-width: 768px) {
   /*** START OF PAGE - SM DEVICES---*/
   nav {
     flex-direction: column;
@@ -546,7 +671,7 @@ footer {
     padding: 0;
   }
   #logo {
-    margin:0;
+    margin: 0;
   }
   .menu {
     width: 100%;
@@ -555,7 +680,7 @@ footer {
     padding: 0;
     margin-bottom: 8%;
   }
-  
+
   .menu li {
     width: 50%;
     padding: 6% 0 10px 0;
@@ -566,6 +691,7 @@ footer {
   .menu li:hover {
     border-top: 0;
     border-bottom: 2px solid var(--blue);
+    color: (var--blue);
   }
 
   .content {
@@ -575,7 +701,7 @@ footer {
     margin: 0;
   }
 
-  header{
+  header {
     margin: 0 4%;
   }
   .searchbar {
@@ -605,81 +731,105 @@ footer {
     font-size: 1em;
     color: #fff;
   }
-.filters{
-  flex-direction: column;
-}
-.filters h2{
-  margin-bottom: 10px;
-}
-.alert{
-  align-items: flex-start;
-  margin: 8% 0;
-}
-.alert p{
-  margin: 5px 0 0 8px;
-}
-.chambres{
-  flex-wrap: wrap-reverse;
-}
-#populaires{
-  width: 100%;
-  border-radius: 0;
-  padding: 6%;
-}
-.gallery-pop {
-  gap: 10px;
-}
-#hebergements{
-  width: 100%;
-  background-color: #fff;
-  border-radius: 0;
-  padding: 0 6% 0 6%;
-}
 
-.gallery-heb{
-  width: 100%;
-  padding: 0;
-  margin-bottom: 20px;
-}
-.card-heb{
-  min-width: 100%;
-  margin-inline-end: 0;
-  margin-block-end: 10px;
-}
-#activities{
-  padding: 0 6%;
-  margin-bottom: 50px;
-}
-.gallery-act {
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 30px;
-}
-.gallery-act a {
-  max-width: 100%;
-  height: 200px;
-}
+  /* wrapper qui permit les icons d'etre sur les boutons*/
+  /* wrapper that allows icons to flex over the buttons*/
+  .filters {
+    flex-direction: column;
+    max-width: 65%;
+  }
+  .filters h2 {
+    margin-left: 4%;
+    text-align: left;
+  }
 
-.card-act {
-  height: 100%;
-  display: flex;;
-  flex-direction: column;
-  border: none;
-  position: relative;
-}
+  .filters .container {
+    flex-wrap: wrap;
+    border: none;
+  }
+  .filters .wrapper {
+    display: flex;
+    margin-right: 3%;
+    margin-bottom: 2%;
+  }
 
-footer {
-  height: max-content;
-  padding: 10% 6% 2% 6%;
-}
+  .alert {
+    align-items: baseline;
+    margin: 4% 0 8%;
+  }
 
-.links {
-  width: 100%;
-  display: block;
-}
-.links .container{
-  padding: 0 0 6% 0;
+  .chambres {
+    flex-wrap: wrap-reverse;
+    gap: 30px;
+  }
+
+  #populaires {
+    flex: 1 0 100%;
+    min-width: 100%;
+    padding: 6% 4%;
+  }
+
+  .gallery-pop {
+    flex: 1 0 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .card-pop {
+    max-width: 100%;
+    flex-wrap: nowrap;
+    height: 140px;
+  }
+
+  .card-pop img {
+    width: 120px;
+  }
+  #hebergements {
+    min-width: 100%;
+    padding: 0 6% 0 6%;
+  }
+
+  .gallery-heb {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .card-heb {
+    min-width: 100%;
+    margin-inline-end: 0;
+    margin-block-end: 10px;
+  }
+  #activities {
+    padding: 0 6%;
+    margin-bottom: 50px;
+  }
+  .gallery-act {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 30px;
+  }
+  .gallery-act a {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card-act {
+    height: 200px;
+    flex-direction: column;
+    border: none;
+    position: relative;
+  }
+
+  footer {
+    height: max-content;
+    padding: 10% 6% 2% 6%;
+  }
+
+  .links {
+    width: 100%;
+    display: block;
+  }
+  .links .container {
+    padding: 0 0 6% 0;
+  }
 }
