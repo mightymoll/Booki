@@ -30,8 +30,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  height: max-content;
+  font-size: calc(15px + 0.390625vw);
 }
 
 /* general icon styling for proper display */
@@ -46,17 +45,21 @@ body {
 }
 
 /* text styles - generic */
-li {
-  list-style: none;
-}
-
 a {
   text-decoration: none;
 }
 
 a:hover {
   color: var(--blue);
-  font-weight: 600;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  line-height: 2em;
 }
 
 button {
@@ -73,7 +76,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+ul {
   margin: 0;
 }
 
@@ -89,16 +93,16 @@ h2 {
 }
 
 h3 {
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 600;
 }
 
 h4 {
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 p {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 /*** START OF PAGE ***/
@@ -106,42 +110,39 @@ p {
 /*---NAVBAR---*/
 nav {
   width: 100vw;
-  height: 120px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 4%;
-  margin: 0;
+  padding: 0 4% 0 6%;
 }
 
 #logo {
   height: 35px;
-  margin: auto 1%;
+  margin: 4% 0;
 }
 
 .menu {
+  width: 30%;
   display: flex;
-  justify-content: flex-end;
-  margin: 0;
-  padding: 0;
+  align-content: center;
 }
 
-.menu li {
-  width: 150px;
-  padding-top: 40px;
+.menu a {
+  width: 50%;
+  padding: 8% 0;
+  margin-left: 4%;
   text-align: center;
+  border-top: 2.5px solid rgba(255, 255, 255, 0);
+  border-bottom: 2.5px solid rgba(255, 255, 255, 0);
 }
 /* <a> text hover style determined in general styles */
-.menu li:hover {
-  border-top: 3px solid var(--blue);
+.menu a:hover {
+  border-top: 2.5px solid var(--blue);
 }
 
-/*---START main content---*/
-.content {
-  width: 92vw;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+/*--- controls padding for all central content ---*/
+main {
+  width: 100vw;
+  padding: 0 4%;
 }
 
 /*---HEADER---*/
@@ -151,13 +152,13 @@ nav {
 
 /* search bar */
 .searchbar {
-  width: 360px;
+  width: 40%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   height: 50px;
-  margin: 30px 0;
+  margin: 3% 0;
 }
 
 /* map marker icon within search bar */
@@ -203,7 +204,7 @@ input[type="search"] {
   height: 48px;
   padding: 0 1em;
   background-color: var(--blue);
-  color: white;
+  color: #fff;
   border: none;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -216,37 +217,35 @@ input[type="search"] {
 /* "Filtres" section */
 .filters {
   display: flex;
-  align-items: baseline;
-}
-.filters h2 {
-  margin-right: 2%;
-  padding: 0;
-}
-
-.filters .container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  gap: 4%;
+}
+
+.filter-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2%;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-left: -50px;
 }
 /* wrapper qui permit les icons d'etre sur les boutons*/
 /* wrapper that allows icons to flex over the buttons*/
-.filters .wrapper {
-  display: flex;
-  margin-right: 3%;
-  margin-bottom: 2%;
-}
 
 .icon-rond {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--light-blue);
-  border-radius: 26px;
-  margin-right: -40px;
+  border-radius: 25px;
+  position: relative;
+  left: 50px;
   z-index: 1;
 }
 
@@ -270,23 +269,23 @@ input[type="search"] {
 }
 
 .btn-filter {
-  height: 50px;
+  height: 48px;
   width: max-content;
   background-color: #fff;
   color: black;
   font-size: 0.9em;
   font-weight: 600;
   border: 2px solid var(--medium-grey);
-  border-radius: 27.5px;
-  padding-right: 1em;
-  padding-left: 3em;
+  border-radius: 24px;
+  padding-right: calc(11px + 1em);
+  padding-left: calc(50px + 1em);
   z-index: 0;
 }
 
 .btn-filter:hover {
   background-color: var(--light-blue);
   color: var(--blue);
-  border-color: var(--light-blue);
+  border: 2px solid var(--light-blue);
 }
 
 /* diponibilite info tagline */
@@ -294,7 +293,7 @@ input[type="search"] {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 1% 0 2% 0;
+  margin: 3% 0;
 }
 
 .alert p {
@@ -330,6 +329,14 @@ input[type="search"] {
   border: 4px solid #fff;
 }
 
+[class^="card"]:hover {
+  transform: scale(1.02);
+}
+
+[class^="caption"] h3 {
+  margin-bottom: 2%;
+}
+
 [class^="caption"] h3:hover {
   color: var(--blue);
 }
@@ -353,113 +360,108 @@ input[type="search"] {
 
 /*---MAIN---*/
 .chambres {
-  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 3%;
-  margin-bottom: 50px;
-}
-/*-- HEBERGEMENTS À VILLE --*/
-#hebergements {
-  flex: 1 1 60%;
-  max-width: 68%;
-  background-color: var(--grey);
-  border-radius: 20px;
-  padding: 30px;
+  margin-bottom: 4%;
 }
 
-#hebergements h1 {
-  margin-bottom: 25px;
+.chambres h1 {
+  margin-bottom: 20px;
+}
+
+/*-- HEBERGEMENTS À VILLE --*/
+#hebergements {
+  flex: 1 0 64%;
+  max-width: 67%;
+  background-color: var(--grey);
+  border-radius: 20px;
+  padding: 3%;
+}
+
+#hebergements h2 {
+  margin-top: 25px;
 }
 
 .gallery-heb {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .card-heb {
-  flex: 1 0 28%;
-  max-width: 31%;
-  min-width: 40px;
+  flex: 1 0 30%;
   display: flex;
   flex-direction: column;
-  margin-block-end: 20px;
 }
 
 .card-heb img {
   width: 100%;
-  height: 120px;
+  height: 80px;
   object-fit: cover;
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
 }
 
 .caption-heb {
-  height: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 7px 10px 5px 10px;
+  padding: 10px 10px 5px 10px;
 }
 
 /*-- LES PLUS POPULAIRES--*/
 #populaires {
-  flex: 1 1 29%;
+  flex: 1 0 28%;
   max-width: 30%;
-  min-width: min-content;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
   background-color: var(--grey);
   border-radius: 20px;
-  padding: 30px;
+  padding: 3%;
 }
 
 .icon-title {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  gap: 10px;
 }
+
 .star-grand::before {
   content: "\f005";
   font-size: 20px;
   color: #000;
 }
-
 .gallery-pop {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px;
+}
+
+.gallery-pop a {
+  width: 100%;
 }
 
 .card-pop {
-  height: 140px;
-  min-width: 240px;
+  height: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  justify-content: flex-start;
 }
 
 .card-pop img {
-  flex-shrink: 0;
-  width: 120px;
-  height: 100%;
+  flex: 1 0 35%;
+  max-width: 35%;
+  height: 100px;
   object-fit: cover;
   border-top-left-radius: 13px;
   border-bottom-left-radius: 13px;
 }
 
 .caption-pop {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px 15px 6px 15px;
+  padding: 10px;
 }
 
 /*---ACTIVITES---*/
@@ -467,41 +469,47 @@ input[type="search"] {
   margin-bottom: 20px;
 }
 /* activites flexbox grid */
+
 .gallery-act {
-  min-width: 100%;
   height: 400px;
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-between;
-  margin-bottom: 50px;
-  gap: 2%;
-  padding: 0;
+  align-content: center;
+  gap: 3%;
+  margin-bottom: 4%;
 }
 /* controls card width/ # of columns*/
-.gallery-act a {
-  min-width: 20%;
-  max-width: 24%;
+.gallery-act > a {
+  width: 22.75%;
   height: 100%;
+}
+
+.container-column {
+  width: 22.75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3%;
 }
 
 .card-act {
   height: 100%;
-  min-width: 200px;
   display: flex;
   flex-direction: column;
   border: none;
 }
 
 .card-act img {
-  width: 100%;
-  height: calc(100% - 50px);
+  height: 360px;
+  overflow: hidden;
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
 .caption-act {
-  height: 50px;
+  height: 40px;
   display: block;
   display: flex;
   align-items: center;
@@ -511,45 +519,42 @@ input[type="search"] {
 /* activites special card heights */
 
 .height-60 {
-  max-height: 55%;
+  max-height: calc((350px * 0.6) - 40px);
+  min-height: 55%;
 }
 
 .height-40 {
-  max-height: 35%;
+  max-height: calc((350px * 0.4) - 40px);
+  min-height: 35%;
 }
 
 .height-50 {
-  max-height: 45%;
+  max-height: calc((350px * 0.5) - 40px);
+  min-height: 45%;
 }
 
 /*---FOOTER---*/
 footer {
   width: 100vw;
-  height: 200px;
   background-color: var(--grey);
   padding: 4%;
 }
 
 .links {
-  width: 90%;
+  width: 85%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 
-.links ul {
-  padding: 0;
-  line-height: 2em;
+.links-list {
+  flex: 1 0 45%;
 }
+
 /* Medium devices, ie: tablets; 768px and up to desktop size */
 @media only screen and (max-width: 992px) {
   /*** START OF PAGE - MED DEVICES---*/
   .content {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+    padding: 0%;
   }
 
   .tagline {
@@ -582,7 +587,6 @@ footer {
     border-top: 2px solid var(--medium-grey);
     border-bottom: 2px solid var(--medium-grey);
     margin-bottom: 15px;
-    margin-bottom: 0;
   }
 
   .filters .wrapper {
@@ -605,7 +609,6 @@ footer {
   #populaires {
     width: 100vw;
     border-radius: 0;
-    padding: 4% 4% 40px 4%;
     margin-bottom: 4%;
   }
 
@@ -667,31 +670,27 @@ footer {
   nav {
     flex-direction: column;
     align-items: center;
-    margin: 6% 0;
-    padding: 0;
+    padding: 10% 0;
   }
   #logo {
-    margin: 0;
-  }
-  .menu {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    margin-bottom: 8%;
+    margin: 0 0 4% 0;
   }
 
-  .menu li {
-    width: 50%;
-    padding: 6% 0 10px 0;
+  .menu {
+    width: 100%;
+  }
+
+  .menu a {
+    padding: 10% 0 3% 0;
+    margin: 0;
     text-align: center;
-    border-bottom: 2px solid var(--grey);
+    border-top: 2.5px solid rgba(255, 255, 255, 0);
+    border-bottom: 3px solid var(--grey);
   }
   /* <a> text hover style determined in general styles */
-  .menu li:hover {
+  .menu a:hover {
     border-top: 0;
-    border-bottom: 2px solid var(--blue);
-    color: var(--blue);
+    border-bottom: 3px solid var(--blue);
   }
 
   .content {
@@ -821,7 +820,6 @@ footer {
   }
 
   footer {
-    height: max-content;
     padding: 10% 6% 2% 6%;
   }
 
