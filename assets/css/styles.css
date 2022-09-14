@@ -59,7 +59,7 @@ ul {
 
 li {
   list-style: none;
-  line-height: 2em;
+  line-height: 1.5em;
 }
 
 button {
@@ -128,7 +128,7 @@ nav {
 
 .menu a {
   width: 50%;
-  padding: 8% 0;
+  padding: 9% 0;
   margin-left: 4%;
   text-align: center;
   border-top: 2.5px solid rgba(255, 255, 255, 0);
@@ -147,7 +147,7 @@ main {
 
 /*---HEADER---*/
 .tagline h1 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 /* search bar */
@@ -158,7 +158,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   height: 50px;
-  margin: 3% 0;
+  margin: 4% 0;
 }
 
 /* map marker icon within search bar */
@@ -273,12 +273,12 @@ input[type="search"] {
   width: max-content;
   background-color: #fff;
   color: black;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 600;
   border: 2px solid var(--medium-grey);
   border-radius: 24px;
-  padding-right: calc(11px + 1em);
-  padding-left: calc(50px + 1em);
+  padding-right: calc(11px + 0.5em);
+  padding-left: calc(50px + 0.5em);
   z-index: 0;
 }
 
@@ -398,17 +398,17 @@ input[type="search"] {
 
 .card-heb img {
   width: 100%;
-  height: 80px;
+  height: 85px;
   object-fit: cover;
-  border-top-left-radius: 13px;
-  border-top-right-radius: 13px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .caption-heb {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px 10px 5px 10px;
+  padding: 10px 10px 3px 10px;
 }
 
 /*-- LES PLUS POPULAIRES--*/
@@ -420,16 +420,16 @@ input[type="search"] {
   padding: 3%;
 }
 
-.icon-title {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+.icon-title h1 {
+  display: inline-block;
 }
 
 .star-grand::before {
+  display: inline;
   content: "\f005";
-  font-size: 20px;
+  font-size: 1.2em;
   color: #000;
+  float: right;
 }
 .gallery-pop {
   display: flex;
@@ -453,8 +453,8 @@ input[type="search"] {
   max-width: 35%;
   height: 100px;
   object-fit: cover;
-  border-top-left-radius: 13px;
-  border-bottom-left-radius: 13px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 .caption-pop {
@@ -471,11 +471,11 @@ input[type="search"] {
 /* activites flexbox grid */
 
 .gallery-act {
-  height: 400px;
+  height: 350px;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
-  gap: 3%;
+  gap: 24px;
   margin-bottom: 4%;
 }
 /* controls card width/ # of columns*/
@@ -489,48 +489,51 @@ input[type="search"] {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 3%;
+  gap: 24px;
 }
 
 .card-act {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   border: none;
 }
 
 .card-act img {
-  height: 360px;
+  max-height: 300px;
+  height: 100%;
   overflow: hidden;
   object-fit: cover;
+  object-position: 50% 45%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
 .caption-act {
-  height: 40px;
-  display: block;
+  flex: none;
+  height: 50px;
   display: flex;
-  align-items: center;
-  padding: 0 15px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px 15px 0 15px;
 }
 
 /* activites special card heights */
 
 .height-60 {
-  max-height: calc((350px * 0.6) - 40px);
-  min-height: 55%;
+  flex: 1 1 60%;
+  max-height: calc(60% - 12px);
 }
 
 .height-40 {
-  max-height: calc((350px * 0.4) - 40px);
-  min-height: 35%;
+  flex: 1 1 40%;
+  max-height: calc(40% - 12px);
 }
 
 .height-50 {
-  max-height: calc((350px * 0.5) - 40px);
-  min-height: 45%;
+  flex: 1 1 50%;
+  max-height: calc(50% - 12px);
 }
 
 /*---FOOTER---*/
@@ -541,61 +544,60 @@ footer {
 }
 
 .links {
-  width: 85%;
+  max-width: 90%;
   display: flex;
   justify-content: space-between;
 }
 
-.links-list {
-  flex: 1 0 45%;
+.links-list ul {
+  margin-top: 8px;
+}
+
+.links-list a {
+  font-size: 0.9em;
 }
 
 /* Medium devices, ie: tablets; 768px and up to desktop size */
 @media only screen and (max-width: 992px) {
   /*** START OF PAGE - MED DEVICES---*/
-  .content {
-    padding: 0%;
+  main {
+    padding: 0;
   }
 
   .tagline {
     padding: 0 4%;
   }
-
   .searchbar {
     width: 70%;
-    margin: 4% auto;
-  }
-
-  .filters {
-    flex-direction: column;
-    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .filters h2 {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 10px;
     font-size: 1.1em;
-    text-align: center;
+    margin-left: 4%;
+    margin-bottom: 1.5%;
+  }
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
   }
 
-  .filters .container {
+  .filter-group {
     width: 100%;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 15px 4%;
+    gap: 1%;
+  }
+
+  .filters > div {
     border-top: 2px solid var(--medium-grey);
     border-bottom: 2px solid var(--medium-grey);
-    margin-bottom: 15px;
-  }
-
-  .filters .wrapper {
-    margin: 0;
+    padding: 2% 4%;
+    margin-bottom: 2%;
   }
 
   .btn-filter {
     font-size: 0.9em;
-    padding-left: 3.5em;
   }
 
   .alert {
@@ -603,43 +605,39 @@ footer {
   }
 
   .chambres {
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
+    flex-flow: column-reverse;
   }
 
   #populaires {
-    width: 100vw;
+    max-width: 100%;
     border-radius: 0;
-    margin-bottom: 4%;
+    padding: 4%;
+    margin-bottom: 5%;
+  }
+
+  .star-grand::before {
+    float: none;
+    margin-left: 20px;
+    font-size: 15px;
   }
 
   .gallery-pop {
     flex-direction: row;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
   }
 
-  .card-pop a {
-    width: 0;
-  }
-  .card-pop {
-    height: 120px;
-    flex: 1 0 33%;
+  .gallery-pop a {
+    flex: 1 0 30%;
     max-width: 33%;
-    min-width: 230px;
   }
-  .card-pop img {
-    flex: none;
-    width: 85px;
-  }
+
   #hebergements {
-    width: 100vw;
+    max-width: 100%;
     background-color: #fff;
     border-radius: 0;
     padding: 0 4%;
-  }
-
-  .gallery-heb {
-    width: 92vw;
   }
 
   #activities {
@@ -647,20 +645,7 @@ footer {
   }
 
   .gallery-act {
-    width: 100%;
-    height: max-content;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 50px;
-  }
-
-  .gallery-act a {
-    width: 33%;
-    min-width: 32%;
-    height: 200px;
+    max-width: 100%;
   }
 }
 
@@ -669,11 +654,13 @@ footer {
   /*** START OF PAGE - SM DEVICES---*/
   nav {
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    padding: 10% 0;
+    padding: 6% 0;
   }
+
   #logo {
-    margin: 0 0 4% 0;
+    margin: 10px 0;
   }
 
   .menu {
@@ -681,31 +668,20 @@ footer {
   }
 
   .menu a {
-    padding: 10% 0 3% 0;
+    padding: 4% 0;
     margin: 0;
-    text-align: center;
-    border-top: 2.5px solid rgba(255, 255, 255, 0);
     border-bottom: 3px solid var(--grey);
   }
   /* <a> text hover style determined in general styles */
   .menu a:hover {
-    border-top: 0;
+    border-top: 2.5px solid rgba(255, 255, 255, 0);
     border-bottom: 3px solid var(--blue);
   }
 
-  .content {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-  }
-
-  header {
-    margin: 0 4%;
-  }
   .searchbar {
     width: 100%;
     margin: 8% 0;
+    padding: 0 4%;
   }
 
   .btn-text {
@@ -734,100 +710,110 @@ footer {
   /* wrapper qui permit les icons d'etre sur les boutons*/
   /* wrapper that allows icons to flex over the buttons*/
   .filters {
+    display: flex;
     flex-direction: column;
-    max-width: 65%;
-  }
-  .filters h2 {
-    margin-left: 4%;
-    text-align: left;
-  }
-
-  .filters .container {
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
+    gap: 4%;
+  }
+  .filters > div {
     border: none;
   }
-  .filters .wrapper {
-    display: flex;
-    margin-right: 3%;
-    margin-bottom: 2%;
-  }
 
+  .btn-filter {
+    margin: 2% 0;
+  }
   .alert {
     align-items: baseline;
-    margin: 4% 0 8%;
+    margin: 4% 4% 8% 4%;
   }
 
   .chambres {
     flex-wrap: wrap-reverse;
-    gap: 30px;
+    gap: 0;
   }
 
   #populaires {
-    flex: 1 0 100%;
-    min-width: 100%;
-    padding: 6% 4%;
+    padding: 10% 4%;
+    margin-bottom: 0;
   }
 
   .gallery-pop {
-    flex: 1 0 100%;
     flex-direction: column;
-    flex-wrap: nowrap;
+    gap: 10px;
   }
 
-  .card-pop {
+  .gallery-pop a {
+    flex: 1 0 100%;
     max-width: 100%;
-    flex-wrap: nowrap;
-    height: 140px;
   }
 
   .card-pop img {
-    width: 120px;
+    height: 120px;
   }
+
   #hebergements {
-    min-width: 100%;
-    padding: 0 6% 0 6%;
+    padding: 10% 4%;
   }
 
   .gallery-heb {
-    width: 100%;
-    padding: 0;
-    margin-bottom: 20px;
+    gap: 10px;
   }
   .card-heb {
     min-width: 100%;
     margin-inline-end: 0;
-    margin-block-end: 10px;
+    margin-block-end: 0;
   }
-  #activities {
-    padding: 0 6%;
-    margin-bottom: 50px;
+
+  .card-heb img {
+    height: 150px;
   }
+
   .gallery-act {
+    height: max-content;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 30px;
+    gap: 15px;
   }
   .gallery-act a {
     width: 100%;
-    max-width: 100%;
+    height: 200px;
+  }
+
+  .container-column {
+    height: fit-content;
+    width: 100%;
+    gap: 15px;
   }
 
   .card-act {
-    height: 200px;
     flex-direction: column;
     border: none;
-    position: relative;
+  }
+
+  .height-60,
+  .height-40,
+  .height-50 {
+    flex: 1 1 100%;
+    max-height: 200px;
+    min-height: 200px;
+  }
+
+  .height-50 img {
+    object-position: 50% 15%;
   }
 
   footer {
-    padding: 10% 6% 2% 6%;
+    padding: 10% 4% 2% 4%;
   }
 
   .links {
     width: 100%;
     display: block;
   }
-  .links .container {
-    padding: 0 0 6% 0;
+
+  .links-list {
+    margin-bottom: 40px;
   }
 }
