@@ -109,7 +109,6 @@ p {
 
 /*---NAVBAR---*/
 nav {
-  width: 100vw;
   display: flex;
   justify-content: space-between;
   padding: 0 4% 0 6%;
@@ -141,7 +140,6 @@ nav {
 
 /*--- controls padding for all central content ---*/
 main {
-  width: 100vw;
   padding: 0 4%;
 }
 
@@ -540,7 +538,6 @@ input[type="search"] {
 
 /*---FOOTER---*/
 footer {
-  width: 100vw;
   background-color: var(--grey);
   padding: 4%;
 }
@@ -662,7 +659,7 @@ footer {
   }
 
   #logo {
-    margin: 10px 0;
+    margin-bottom: 8%;
   }
 
   .menu {
